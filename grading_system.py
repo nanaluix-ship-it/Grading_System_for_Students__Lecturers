@@ -135,7 +135,7 @@ class Student:
 
 
 def average_grade_all_students(students: List[Student], course: str) -> float:
-    """Возвращает среднюю оценку студентов по курсу."""
+    """Возвращает среднюю оценку студентов по указанному курсу."""
     all_grades: List[int] = []
     for student in students:
         if isinstance(student, Student):
@@ -144,7 +144,7 @@ def average_grade_all_students(students: List[Student], course: str) -> float:
 
 
 def average_grade_all_lecturers(lecturers: List[Lecturer], course: str) -> float:
-    """Возвращает среднюю оценку лекторов по курсу."""
+    """Возвращает среднюю оценку лекторов по указанному курсу."""
     all_grades: List[int] = []
     for lecturer in lecturers:
         if isinstance(lecturer, Lecturer):
