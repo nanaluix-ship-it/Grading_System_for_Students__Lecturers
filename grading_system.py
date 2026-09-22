@@ -33,27 +33,27 @@ class Lecturer(Mentor):
 
     def __eq__(self, other):
         if not isinstance(other, Lecturer):
-            return NotImplemented
+            return False
         return self.average_grade == other.average_grade
 
     def __lt__(self, other):
         if not isinstance(other, Lecturer):
-            return NotImplemented
+            return False
         return self.average_grade < other.average_grade
 
     def __gt__(self, other):
         if not isinstance(other, Lecturer):
-            return NotImplemented
+            return False
         return self.average_grade > other.average_grade
 
 
 class Reviewer(Mentor):
     def rate_hw(self, student, course, grade):
         if (
-            isinstance(student, Student)
-            and course in self.courses_attached
-            and course in student.courses_in_progress
-            and 1 <= grade <= 10
+                isinstance(student, Student)
+                and course in self.courses_attached
+                and course in student.courses_in_progress
+                and 1 <= grade <= 10
         ):
             student.grades.setdefault(course, []).append(grade)
             return
@@ -78,10 +78,10 @@ class Student:
 
     def rate_lecture(self, lecturer, course, grade):
         if (
-            isinstance(lecturer, Lecturer)
-            and course in self.courses_in_progress
-            and course in lecturer.courses_attached
-            and 1 <= grade <= 10
+                isinstance(lecturer, Lecturer)
+                and course in self.courses_in_progress
+                and course in lecturer.courses_attached
+                and 1 <= grade <= 10
         ):
             lecturer.grades.setdefault(course, []).append(grade)
             return
@@ -101,17 +101,17 @@ class Student:
 
     def __eq__(self, other):
         if not isinstance(other, Student):
-            return NotImplemented
+            return False
         return self.average_grade == other.average_grade
 
     def __lt__(self, other):
         if not isinstance(other, Student):
-            return NotImplemented
+            return False
         return self.average_grade < other.average_grade
 
     def __gt__(self, other):
         if not isinstance(other, Student):
-            return NotImplemented
+            return False
         return self.average_grade > other.average_grade
 
 
