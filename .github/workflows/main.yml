@@ -1,4 +1,4 @@
-name: Python CI
+name: Python CI with Lint and Coverage
 
 on:
   push:
@@ -25,5 +25,8 @@ jobs:
           python -m pip install --upgrade pip
           pip install -r requirements.txt
 
-      - name: Run pytest
-        run: python -m pytest tests -v
+      - name: Run pylint
+        run: pylint grading_system.py
+
+      - name: Run pytest with coverage
+        run: pytest tests -v --cov=grading_system.py --cov-report=term
