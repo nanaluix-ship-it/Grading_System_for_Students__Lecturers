@@ -68,6 +68,7 @@ class Reviewer(Mentor):
     """Ревьюер, который ставит оценки за домашние задания."""
 
     def rate_hw(self, student: 'Student', course: str, grade: int) -> Optional[str]:
+        """Ставит оценку студенту за домашнее задание по курсу."""
         if (
                 isinstance(student, Student)
                 and course in self.courses_attached
@@ -98,6 +99,7 @@ class Student:
         self.finished_courses.append(course_name)
 
     def rate_lecture(self, lecturer: Lecturer, course: str, grade: int) -> Optional[str]:
+        """Оценивает лекцию преподавателя по курсу."""
         if (
                 isinstance(lecturer, Lecturer)
                 and course in self.courses_in_progress
