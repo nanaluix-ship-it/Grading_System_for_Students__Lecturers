@@ -21,6 +21,11 @@ class Mentor:
         self.surname = surname
         self.courses_attached: List[str] = []
 
+    def add_course(self, course_name: str) -> None:
+        """Добавляет курс в список прикреплённых курсов ментора."""
+        if course_name not in self.courses_attached:
+            self.courses_attached.append(course_name)
+
     def __str__(self) -> str:
         return f'Имя: {self.name}\nФамилия: {self.surname}'
 
