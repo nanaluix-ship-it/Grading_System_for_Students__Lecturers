@@ -25,6 +25,9 @@ dist/
 # Кэш pytest
 .pytest_cache/
 
+# Отчёт покрытия (новый)
+.coverage
+
 # Локальные конфиги и ОС-мусор
 .env
 .DS_Store
